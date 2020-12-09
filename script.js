@@ -16,6 +16,9 @@ let special = ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 function generatePassword() {
   let passwordLength = prompt("Enter a password length between 8-128.");
+  while (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("Enter a password length between 8-128.");
+  }
   passwordLength = parseInt(passwordLength, 10);
 
   let useLowercase = confirm("Include lowercase characters?");
